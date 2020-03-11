@@ -1,0 +1,6 @@
+robotframework
+robotframework-seleniumlibrary
+webdrivermanager
+webdrivermanager firefox chrome
+robotframework-databaselibrary
+cx_oracle
