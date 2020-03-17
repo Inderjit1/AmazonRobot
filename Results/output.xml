@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.1.2 (Python 3.6.0 on win32)" generated="20200311 11:31:09.768" rpa="false">
+<robot generator="Robot 3.1.2 (Python 3.6.0 on win32)" generated="20200317 14:02:27.597" rpa="false">
 <suite id="s1" name="Amazon" source="C:\development\robot-scripts\amazon\Tests\Amazon.robot">
 <test id="s1-t1" name="User must sign in to check out">
 <kw name="Open Browser" library="SeleniumLibrary">
@@ -8,15 +8,15 @@
 <arg>http://www.amazon.com</arg>
 <arg>chrome</arg>
 </arguments>
-<msg timestamp="20200311 11:31:10.171" level="INFO">Opening browser 'chrome' to base url 'http://www.amazon.com'.</msg>
-<status status="PASS" starttime="20200311 11:31:10.171" endtime="20200311 11:31:14.209"></status>
+<msg timestamp="20200317 14:02:28.230" level="INFO">Opening browser 'chrome' to base url 'http://www.amazon.com'.</msg>
+<status status="PASS" starttime="20200317 14:02:28.230" endtime="20200317 14:02:34.722"></status>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on the current page.</doc>
 <arguments>
 <arg>Today's Deals</arg>
 </arguments>
-<status status="PASS" starttime="20200311 11:31:14.210" endtime="20200311 11:31:14.555"></status>
+<status status="PASS" starttime="20200317 14:02:34.724" endtime="20200317 14:02:38.290"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -24,61 +24,66 @@
 <arg>id=twotabsearchtextbox</arg>
 <arg>Speakers</arg>
 </arguments>
-<msg timestamp="20200311 11:31:14.558" level="INFO">Typing text 'Speakers' into text field 'id=twotabsearchtextbox'.</msg>
-<status status="PASS" starttime="20200311 11:31:14.557" endtime="20200311 11:31:14.977"></status>
+<msg timestamp="20200317 14:02:38.291" level="INFO">Typing text 'Speakers' into text field 'id=twotabsearchtextbox'.</msg>
+<status status="PASS" starttime="20200317 14:02:38.290" endtime="20200317 14:02:39.379"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks the button identified by ``locator``.</doc>
 <arguments>
 <arg>xpath=//*[@id="nav-search"]/form/div[2]/div/input</arg>
 </arguments>
-<msg timestamp="20200311 11:31:14.978" level="INFO">Clicking button 'xpath=//*[@id="nav-search"]/form/div[2]/div/input'.</msg>
-<status status="PASS" starttime="20200311 11:31:14.978" endtime="20200311 11:31:17.427"></status>
+<msg timestamp="20200317 14:02:39.380" level="INFO">Clicking button 'xpath=//*[@id="nav-search"]/form/div[2]/div/input'.</msg>
+<status status="PASS" starttime="20200317 14:02:39.379" endtime="20200317 14:02:43.420"></status>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on the current page.</doc>
 <arguments>
 <arg>results for "Speakers"</arg>
 </arguments>
-<status status="PASS" starttime="20200311 11:31:17.428" endtime="20200311 11:31:17.494"></status>
+<status status="PASS" starttime="20200317 14:02:43.427" endtime="20200317 14:02:44.085"></status>
 </kw>
 <kw name="Click Link" library="SeleniumLibrary">
 <doc>Clicks a link identified by ``locator``.</doc>
 <arguments>
 <arg>xpath=//*[@id="search"]/div[1]/div[2]/div/span[4]/div[1]/div[1]/div/span/div/div/div/div/div[2]/div[2]/div/div[1]/div/div/div[1]/h2/a</arg>
 </arguments>
-<msg timestamp="20200311 11:31:17.495" level="INFO">Clicking link 'xpath=//*[@id="search"]/div[1]/div[2]/div/span[4]/div[1]/div[1]/div/span/div/div/div/div/div[2]/div[2]/div/div[1]/div/div/div[1]/h2/a'.</msg>
-<status status="PASS" starttime="20200311 11:31:17.494" endtime="20200311 11:31:17.703"></status>
+<msg timestamp="20200317 14:02:44.088" level="INFO">Clicking link 'xpath=//*[@id="search"]/div[1]/div[2]/div/span[4]/div[1]/div[1]/div/span/div/div/div/div/div[2]/div[2]/div/div[1]/div/div/div[1]/h2/a'.</msg>
+<status status="PASS" starttime="20200317 14:02:44.087" endtime="20200317 14:02:46.053"></status>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on the current page.</doc>
 <arguments>
 <arg>Back to results</arg>
 </arguments>
-<status status="PASS" starttime="20200311 11:31:17.704" endtime="20200311 11:31:18.561"></status>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<doc>Clicks the button identified by ``locator``.</doc>
-<arguments>
-<arg>Add to Cart</arg>
-</arguments>
-<msg timestamp="20200311 11:31:18.562" level="INFO">Clicking button 'Add to Cart'.</msg>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200311 11:31:18.972" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200311 11:31:18.604" endtime="20200311 11:31:18.972"></status>
+<msg timestamp="20200317 14:02:46.105" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.132)
+</msg>
+<status status="FAIL" starttime="20200317 14:02:46.073" endtime="20200317 14:02:46.106"></status>
 </kw>
-<msg timestamp="20200311 11:31:18.980" level="FAIL">Button with locator 'Add to Cart' not found.</msg>
-<status status="FAIL" starttime="20200311 11:31:18.562" endtime="20200311 11:31:18.980"></status>
+<msg timestamp="20200317 14:02:46.106" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.132)
+</msg>
+<msg timestamp="20200317 14:02:46.129" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.132)
+</msg>
+<status status="FAIL" starttime="20200317 14:02:46.054" endtime="20200317 14:02:46.130"></status>
 </kw>
 <doc>This is some basic info about the test</doc>
 <tags>
 <tag>Smoke</tag>
 </tags>
-<status status="FAIL" starttime="20200311 11:31:10.170" endtime="20200311 11:31:18.981" critical="yes">Button with locator 'Add to Cart' not found.</status>
+<status status="FAIL" starttime="20200317 14:02:28.229" endtime="20200317 14:02:46.140" critical="yes">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.132)
+</status>
 </test>
 <doc>This is some basic info about the whole suite</doc>
-<status status="FAIL" starttime="20200311 11:31:09.771" endtime="20200311 11:31:18.983"></status>
+<status status="FAIL" starttime="20200317 14:02:27.603" endtime="20200317 14:02:46.150"></status>
 </suite>
 <statistics>
 <total>
@@ -93,5 +98,9 @@
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20200317 14:02:46.106" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.132)
+</msg>
 </errors>
 </robot>
