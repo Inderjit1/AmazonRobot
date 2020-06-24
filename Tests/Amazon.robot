@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation   This is some basic info about the whole suite
+Documentation   This is some basic info about the whole suite - test change
 Library  SeleniumLibrary
 
 *** Variables ***
