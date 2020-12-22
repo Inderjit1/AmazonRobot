@@ -1,5 +1,3 @@
-#!/usr/bin python
-
 from subprocess import Popen, PIPE
 import subprocess
 import properties
@@ -13,5 +11,3 @@ def sqlplus_connect():
     print(process.stdout)
     output, error = process.communicate(input=properties.SQL_PLUS_SCRIPT_PATH)
     #output, error = process.communicate(input="select sys_context('USERENV','SERVER_HOST') from dual;")
-    print(f'Output: ${output}')
-    print(f'Error is: ${error}')
