@@ -1,22 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.1.2 (Python 3.6.0 on win32)" generated="20200317 14:04:31.077" rpa="false">
+<robot generator="Robot 3.2.1 (Python 3.6.0 on win32)" generated="20200723 15:34:33.692" rpa="false">
 <suite id="s1" name="Front Office" source="C:\development\robot-scripts\front-office\Tests\Front_Office.robot">
 <test id="s1-t1" name="Should be able to access &quot;Team&quot; Page">
 <kw name="Begin Web Test" library="CommonWeb" type="setup">
-<kw name="Open Browser" library="SeleniumLibrary">
-<doc>Opens a new browser instance to the optional ``url``.</doc>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+</arguments>
+<assign>
+<var>${chrome_options}</var>
+</assign>
+<msg timestamp="20200723 15:34:34.091" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000020C2665B400&gt;</msg>
+<status status="PASS" starttime="20200723 15:34:34.091" endtime="20200723 15:34:34.091"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+</arguments>
+<status status="PASS" starttime="20200723 15:34:34.091" endtime="20200723 15:34:34.092"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+</arguments>
+<status status="PASS" starttime="20200723 15:34:34.092" endtime="20200723 15:34:34.092"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+</arguments>
+<status status="PASS" starttime="20200723 15:34:34.092" endtime="20200723 15:34:34.092"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+</arguments>
+<status status="PASS" starttime="20200723 15:34:34.093" endtime="20200723 15:34:34.093"></status>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<arguments>
+<arg>Chrome</arg>
+<arg>chrome_options=${chrome_options}</arg>
+</arguments>
+<msg timestamp="20200723 15:34:34.093" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20200723 15:34:34.093" endtime="20200723 15:34:36.544"></status>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<arguments>
+<arg>1024</arg>
+<arg>768</arg>
+</arguments>
+<status status="PASS" starttime="20200723 15:34:36.545" endtime="20200723 15:34:37.672"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
 <arguments>
 <arg>${URL}</arg>
-<arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20200317 14:04:31.391" level="INFO">Opening browser 'chrome' to base url 'http://www.robotframeworktutorial.com/front-office'.</msg>
-<status status="PASS" starttime="20200317 14:04:31.391" endtime="20200317 14:04:36.343"></status>
+<msg timestamp="20200723 15:34:37.673" level="INFO">Opening url 'http://www.robotframeworktutorial.com/front-office'</msg>
+<status status="PASS" starttime="20200723 15:34:37.672" endtime="20200723 15:34:39.727"></status>
 </kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20200317 14:04:36.343" endtime="20200317 14:04:37.479"></status>
-</kw>
-<status status="PASS" starttime="20200317 14:04:31.391" endtime="20200317 14:04:37.479"></status>
+<status status="PASS" starttime="20200723 15:34:34.090" endtime="20200723 15:34:39.727"></status>
 </kw>
 <kw name="Go to Landing Page" library="FrontOfficeApp">
 <kw name="Navigate To" library="Landing">
@@ -25,10 +85,10 @@
 <arguments>
 <arg>${URL}</arg>
 </arguments>
-<msg timestamp="20200317 14:04:37.483" level="INFO">Opening url 'http://www.robotframeworktutorial.com/front-office'</msg>
-<status status="PASS" starttime="20200317 14:04:37.483" endtime="20200317 14:04:37.652"></status>
+<msg timestamp="20200723 15:34:39.729" level="INFO">Opening url 'http://www.robotframeworktutorial.com/front-office'</msg>
+<status status="PASS" starttime="20200723 15:34:39.729" endtime="20200723 15:34:39.863"></status>
 </kw>
-<status status="PASS" starttime="20200317 14:04:37.482" endtime="20200317 14:04:37.653"></status>
+<status status="PASS" starttime="20200723 15:34:39.728" endtime="20200723 15:34:39.863"></status>
 </kw>
 <kw name="Verify Page Loaded" library="Landing">
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
@@ -36,11 +96,11 @@
 <arguments>
 <arg>${LANDING_NAVIGATION_ELEMENT}</arg>
 </arguments>
-<status status="PASS" starttime="20200317 14:04:37.654" endtime="20200317 14:04:37.680"></status>
+<status status="PASS" starttime="20200723 15:34:39.864" endtime="20200723 15:34:39.884"></status>
 </kw>
-<status status="PASS" starttime="20200317 14:04:37.653" endtime="20200317 14:04:37.681"></status>
+<status status="PASS" starttime="20200723 15:34:39.863" endtime="20200723 15:34:39.884"></status>
 </kw>
-<status status="PASS" starttime="20200317 14:04:37.481" endtime="20200317 14:04:37.681"></status>
+<status status="PASS" starttime="20200723 15:34:39.728" endtime="20200723 15:34:39.884"></status>
 </kw>
 <kw name="Go to &quot;Team&quot; Page" library="FrontOfficeApp">
 <kw name="Select &quot;Team&quot; Page" library="TopNav">
@@ -49,18 +109,18 @@
 <arguments>
 <arg>${TOP_NAV_TEAM_LINK}</arg>
 </arguments>
-<msg timestamp="20200317 14:04:37.684" level="INFO">Clicking element 'css=#bs-example-navbar-collapse-1 &gt; ul &gt; li:nth-child(5) &gt; a'.</msg>
-<status status="PASS" starttime="20200317 14:04:37.684" endtime="20200317 14:04:37.775"></status>
+<msg timestamp="20200723 15:34:39.887" level="INFO">Clicking element 'css=#bs-example-navbar-collapse-1 &gt; ul &gt; li:nth-child(5) &gt; a'.</msg>
+<status status="PASS" starttime="20200723 15:34:39.886" endtime="20200723 15:34:39.968"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>3s</arg>
 </arguments>
-<msg timestamp="20200317 14:04:40.777" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20200317 14:04:37.776" endtime="20200317 14:04:40.777"></status>
+<msg timestamp="20200723 15:34:42.969" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20200723 15:34:39.968" endtime="20200723 15:34:42.970"></status>
 </kw>
-<status status="PASS" starttime="20200317 14:04:37.683" endtime="20200317 14:04:40.777"></status>
+<status status="PASS" starttime="20200723 15:34:39.886" endtime="20200723 15:34:42.971"></status>
 </kw>
 <kw name="Verify Page Loaded" library="Team">
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
@@ -68,41 +128,101 @@
 <arguments>
 <arg>${TEAM_HEADER_LABEL}</arg>
 </arguments>
-<status status="PASS" starttime="20200317 14:04:40.778" endtime="20200317 14:04:40.792"></status>
+<status status="PASS" starttime="20200723 15:34:42.974" endtime="20200723 15:34:42.993"></status>
 </kw>
-<status status="PASS" starttime="20200317 14:04:40.777" endtime="20200317 14:04:40.792"></status>
+<status status="PASS" starttime="20200723 15:34:42.972" endtime="20200723 15:34:42.994"></status>
 </kw>
-<status status="PASS" starttime="20200317 14:04:37.682" endtime="20200317 14:04:40.792"></status>
+<status status="PASS" starttime="20200723 15:34:39.885" endtime="20200723 15:34:42.994"></status>
 </kw>
 <kw name="End Web Test" library="CommonWeb" type="teardown">
 <kw name="Close All Browsers" library="SeleniumLibrary">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" starttime="20200317 14:04:40.793" endtime="20200317 14:04:43.057"></status>
+<status status="PASS" starttime="20200723 15:34:42.996" endtime="20200723 15:34:45.151"></status>
 </kw>
-<status status="PASS" starttime="20200317 14:04:40.793" endtime="20200317 14:04:43.057"></status>
+<status status="PASS" starttime="20200723 15:34:42.995" endtime="20200723 15:34:45.152"></status>
 </kw>
 <doc>This is test 1</doc>
 <tags>
 <tag>test1</tag>
 </tags>
-<status status="PASS" starttime="20200317 14:04:31.390" endtime="20200317 14:04:43.058" critical="yes"></status>
+<status status="PASS" starttime="20200723 15:34:34.088" endtime="20200723 15:34:45.154" critical="yes"></status>
 </test>
 <test id="s1-t2" name="&quot;Team&quot; Page should match requirements">
 <kw name="Begin Web Test" library="CommonWeb" type="setup">
-<kw name="Open Browser" library="SeleniumLibrary">
-<doc>Opens a new browser instance to the optional ``url``.</doc>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+</arguments>
+<assign>
+<var>${chrome_options}</var>
+</assign>
+<msg timestamp="20200723 15:34:45.172" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000020C266B7160&gt;</msg>
+<status status="PASS" starttime="20200723 15:34:45.171" endtime="20200723 15:34:45.172"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+</arguments>
+<status status="PASS" starttime="20200723 15:34:45.173" endtime="20200723 15:34:45.174"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+</arguments>
+<status status="PASS" starttime="20200723 15:34:45.175" endtime="20200723 15:34:45.176"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+</arguments>
+<status status="PASS" starttime="20200723 15:34:45.177" endtime="20200723 15:34:45.178"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+</arguments>
+<status status="PASS" starttime="20200723 15:34:45.178" endtime="20200723 15:34:45.179"></status>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<arguments>
+<arg>Chrome</arg>
+<arg>chrome_options=${chrome_options}</arg>
+</arguments>
+<msg timestamp="20200723 15:34:45.181" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20200723 15:34:45.180" endtime="20200723 15:34:47.604"></status>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<arguments>
+<arg>1024</arg>
+<arg>768</arg>
+</arguments>
+<status status="PASS" starttime="20200723 15:34:47.605" endtime="20200723 15:34:48.732"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
 <arguments>
 <arg>${URL}</arg>
-<arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20200317 14:04:43.061" level="INFO">Opening browser 'chrome' to base url 'http://www.robotframeworktutorial.com/front-office'.</msg>
-<status status="PASS" starttime="20200317 14:04:43.061" endtime="20200317 14:04:47.549"></status>
+<msg timestamp="20200723 15:34:48.732" level="INFO">Opening url 'http://www.robotframeworktutorial.com/front-office'</msg>
+<status status="PASS" starttime="20200723 15:34:48.732" endtime="20200723 15:34:50.956"></status>
 </kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20200317 14:04:47.549" endtime="20200317 14:04:48.712"></status>
-</kw>
-<status status="PASS" starttime="20200317 14:04:43.060" endtime="20200317 14:04:48.712"></status>
+<status status="PASS" starttime="20200723 15:34:45.169" endtime="20200723 15:34:50.956"></status>
 </kw>
 <kw name="Go to Landing Page" library="FrontOfficeApp">
 <kw name="Navigate To" library="Landing">
@@ -111,10 +231,10 @@
 <arguments>
 <arg>${URL}</arg>
 </arguments>
-<msg timestamp="20200317 14:04:48.712" level="INFO">Opening url 'http://www.robotframeworktutorial.com/front-office'</msg>
-<status status="PASS" starttime="20200317 14:04:48.712" endtime="20200317 14:04:48.902"></status>
+<msg timestamp="20200723 15:34:50.959" level="INFO">Opening url 'http://www.robotframeworktutorial.com/front-office'</msg>
+<status status="PASS" starttime="20200723 15:34:50.958" endtime="20200723 15:34:51.089"></status>
 </kw>
-<status status="PASS" starttime="20200317 14:04:48.712" endtime="20200317 14:04:48.902"></status>
+<status status="PASS" starttime="20200723 15:34:50.958" endtime="20200723 15:34:51.089"></status>
 </kw>
 <kw name="Verify Page Loaded" library="Landing">
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
@@ -122,11 +242,11 @@
 <arguments>
 <arg>${LANDING_NAVIGATION_ELEMENT}</arg>
 </arguments>
-<status status="PASS" starttime="20200317 14:04:48.904" endtime="20200317 14:04:48.930"></status>
+<status status="PASS" starttime="20200723 15:34:51.089" endtime="20200723 15:34:51.132"></status>
 </kw>
-<status status="PASS" starttime="20200317 14:04:48.903" endtime="20200317 14:04:48.931"></status>
+<status status="PASS" starttime="20200723 15:34:51.089" endtime="20200723 15:34:51.133"></status>
 </kw>
-<status status="PASS" starttime="20200317 14:04:48.712" endtime="20200317 14:04:48.931"></status>
+<status status="PASS" starttime="20200723 15:34:50.957" endtime="20200723 15:34:51.133"></status>
 </kw>
 <kw name="Go to &quot;Team&quot; Page" library="FrontOfficeApp">
 <kw name="Select &quot;Team&quot; Page" library="TopNav">
@@ -135,18 +255,18 @@
 <arguments>
 <arg>${TOP_NAV_TEAM_LINK}</arg>
 </arguments>
-<msg timestamp="20200317 14:04:48.934" level="INFO">Clicking element 'css=#bs-example-navbar-collapse-1 &gt; ul &gt; li:nth-child(5) &gt; a'.</msg>
-<status status="PASS" starttime="20200317 14:04:48.933" endtime="20200317 14:04:49.045"></status>
+<msg timestamp="20200723 15:34:51.136" level="INFO">Clicking element 'css=#bs-example-navbar-collapse-1 &gt; ul &gt; li:nth-child(5) &gt; a'.</msg>
+<status status="PASS" starttime="20200723 15:34:51.136" endtime="20200723 15:34:51.249"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>3s</arg>
 </arguments>
-<msg timestamp="20200317 14:04:52.046" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20200317 14:04:49.045" endtime="20200317 14:04:52.046"></status>
+<msg timestamp="20200723 15:34:54.252" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20200723 15:34:51.250" endtime="20200723 15:34:54.252"></status>
 </kw>
-<status status="PASS" starttime="20200317 14:04:48.932" endtime="20200317 14:04:52.046"></status>
+<status status="PASS" starttime="20200723 15:34:51.136" endtime="20200723 15:34:54.253"></status>
 </kw>
 <kw name="Verify Page Loaded" library="Team">
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
@@ -154,11 +274,11 @@
 <arguments>
 <arg>${TEAM_HEADER_LABEL}</arg>
 </arguments>
-<status status="PASS" starttime="20200317 14:04:52.047" endtime="20200317 14:04:52.062"></status>
+<status status="PASS" starttime="20200723 15:34:54.254" endtime="20200723 15:34:54.268"></status>
 </kw>
-<status status="PASS" starttime="20200317 14:04:52.046" endtime="20200317 14:04:52.062"></status>
+<status status="PASS" starttime="20200723 15:34:54.253" endtime="20200723 15:34:54.268"></status>
 </kw>
-<status status="PASS" starttime="20200317 14:04:48.932" endtime="20200317 14:04:52.063"></status>
+<status status="PASS" starttime="20200723 15:34:51.134" endtime="20200723 15:34:54.268"></status>
 </kw>
 <kw name="Validate &quot;Team&quot; Page" library="FrontOfficeApp">
 <kw name="Validate Page Contents" library="Team">
@@ -170,8 +290,8 @@
 <assign>
 <var>${ElementText}</var>
 </assign>
-<msg timestamp="20200317 14:04:52.091" level="INFO">${ElementText} = OUR AMAZING TEAM</msg>
-<status status="PASS" starttime="20200317 14:04:52.065" endtime="20200317 14:04:52.091"></status>
+<msg timestamp="20200723 15:34:54.293" level="INFO">${ElementText} = OUR AMAZING TEAM</msg>
+<status status="PASS" starttime="20200723 15:34:54.270" endtime="20200723 15:34:54.293"></status>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <doc>Fails if objects are unequal after converting them to strings.</doc>
@@ -180,27 +300,27 @@
 <arg>Our Amazing Team</arg>
 <arg>ignore_case=true</arg>
 </arguments>
-<status status="PASS" starttime="20200317 14:04:52.091" endtime="20200317 14:04:52.091"></status>
+<status status="PASS" starttime="20200723 15:34:54.293" endtime="20200723 15:34:54.294"></status>
 </kw>
-<status status="PASS" starttime="20200317 14:04:52.064" endtime="20200317 14:04:52.091"></status>
+<status status="PASS" starttime="20200723 15:34:54.269" endtime="20200723 15:34:54.294"></status>
 </kw>
-<status status="PASS" starttime="20200317 14:04:52.063" endtime="20200317 14:04:52.091"></status>
+<status status="PASS" starttime="20200723 15:34:54.269" endtime="20200723 15:34:54.294"></status>
 </kw>
 <kw name="End Web Test" library="CommonWeb" type="teardown">
 <kw name="Close All Browsers" library="SeleniumLibrary">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" starttime="20200317 14:04:52.092" endtime="20200317 14:04:54.388"></status>
+<status status="PASS" starttime="20200723 15:34:54.295" endtime="20200723 15:34:56.409"></status>
 </kw>
-<status status="PASS" starttime="20200317 14:04:52.092" endtime="20200317 14:04:54.388"></status>
+<status status="PASS" starttime="20200723 15:34:54.295" endtime="20200723 15:34:56.410"></status>
 </kw>
 <doc>This is test 2</doc>
 <tags>
 <tag>test2</tag>
 </tags>
-<status status="PASS" starttime="20200317 14:04:43.060" endtime="20200317 14:04:54.389" critical="yes"></status>
+<status status="PASS" starttime="20200723 15:34:45.165" endtime="20200723 15:34:56.411" critical="yes"></status>
 </test>
 <doc>Talk about what this suite of tests does</doc>
-<status status="PASS" starttime="20200317 14:04:31.080" endtime="20200317 14:04:54.391"></status>
+<status status="PASS" starttime="20200723 15:34:33.696" endtime="20200723 15:34:56.421"></status>
 </suite>
 <statistics>
 <total>
