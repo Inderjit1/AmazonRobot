@@ -7,10 +7,9 @@ Documentation    Suite description
 
 
 *** Keywords ***
-Start script
-    [Documentation]     Starting script execution
+Change SYSADM Password
+    [Documentation]     Change SYSADM Password in DEV DB.
        #SSHLibrary.List Files in Directory
-
        # Logs into App Server and stops it
        ${stdout}=   Execute Command      ${APPSERVER_STOP_SCRIPT}
        Log  ${stdout}
@@ -21,10 +20,14 @@ Start script
        Execute Command      ${CHANGE_PASSWORD_SCRIPT}
        Execute Command      ${NEW_SYSADM_PWD}
 
-       # Log into SQLPlus
-       sqlplus_connect
 
+Run Post Clone Script
+    [Documentation]     Run the Post Clone script
+       # Run post clone via SQLPlus
+       sqlplus_connect
 
 Start App Server
     [Documentation]     Start App Server and clear cache
+    Open Connection     ${APP_DB}
+    Login    ${USERNAME}     ${PASSWORD}
     Execute Command     ${APPSERVER_START_SCRIPT}

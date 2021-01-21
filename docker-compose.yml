@@ -1,0 +1,9 @@
+version: "3"
+services:
+  robot-framework:
+    build:  .
+    image: postclone
+    ports:
+      - "9001:9001"
+    volumes:
+      "C:\010203453:/usr/share/jenkins"

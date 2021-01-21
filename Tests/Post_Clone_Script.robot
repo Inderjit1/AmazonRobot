@@ -14,6 +14,9 @@ Test Teardown   End Connection
 Post-Clone Scripts
     [Documentation]    Run Post-Clone scripts for DB Clone
     [Tags]  Scripts
-    PostCloneApp.Start Post-Clone Scripts
-    PostCloneApp.Start App Server
+    PostCloneApp.Change SYSADM Password in Database
+    PostCloneApp.Run Post Clone Script
+#    PostCloneApp.Start Post-Clone Scripts
+#    PostCloneApp.Start App Server
+
 

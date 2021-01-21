@@ -42,4 +42,27 @@ Select Database to Clone
     # Submit Job to be cloned
     Click Element       xpath=/html/body/div[1]/div/div/dx-dialog-connector/ds-refresh-wizard/dx-wizard/dx-dialog-layout/div[3]/ng-transclude/dx-dialog-footer/dx-form-actions/dx-button[4]
 
+Verify Clone run
+#    Wait Until Page Contains Element    xpath=//*[@id="mat-tab-label-0-1"]/div/div      20s
+#    Click Element    xpath=//*[@id="mat-tab-label-0-1"]/div/div
+#
+#    Wait Until Page Contains Element    xpath=//*[@aria-valuetext]    10s
+#    ${progess_bar}=     xpath=//*[@aria-valuetext]
+#    ${progess_bar_status}=    Get Element Attribute     ${progess_bar}
+#    Log     ${progress_bar_status}
+
+    Wait Until Page Contains Element    xpath=//*[@id="aria-shr-navbar"]/ul/li[3]/a
+    Click Element   xpath=//*[@id="aria-shr-navbar"]/ul/li[3]/a
+    Wait Until Element Is Visible   xpath=/html/body/div[2]/div[2]/ad-base-admin-app/div/shr-navbar/nav/div/ul/li[3]/ul/li[2]/a
+    Click Element  xpath=/html/body/div[2]/div[2]/ad-base-admin-app/div/shr-navbar/nav/div/ul/li[3]/ul/li[2]/a
+
+    Wait Until Page Contains       RUNNING
+    Wait Until Keyword Succeeds     15min     40s     Check Database Clone Status
+
+Check Database Clone Status
+#    ${db_status}=   Get Value   xpath=/html/body/div[2]/div[2]/ad-base-admin-app/div/dx-split-view/div/div[1]/div/dx-split-view-first/div/div/alt-jobs/alt-rangebound-collection/dx-two-column-view/div/div[2]/ng-transclude/dx-two-column-center/div/ng-transclude/div[2]/dx-grid-new/ag-grid-angular/div/div[1]/div/div[3]/div[2]/div/div/div/div[6]/alt-job-job-state-renderer/span
+#    Log     ${db_status}
+#    Should Be Equal As Strings  ${db_status}   COMPLETED
+    Wait Until Page Does Not Contain     RUNNING
+
 

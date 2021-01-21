@@ -1,14 +1,18 @@
 USERNAME = 'inbass92'
-PASSWORD = 'Boxing2013'
+PASSWORD = 'Hahaha123!'
 ID = '010203453'
+SECRET_SERVER_PWD = "Boxing2015!"
+SECRET_SERVER_DB = "CASJDVL"
 
 DELPHIXURL = 'https://delphix801.cms.calstate.edu/login/index.html?from=%2FServer.html'
 UNIWEBURL = 'https://uniweb20.calstate.edu/login'
-TARGET_DB = 'cbsjdvl'
-SOURCE_DB = 'csjprd'
+TSSURL    = 'https://secretserver.sjsu.edu/Login.aspx?ReturnUrl=%2f'
+
+TARGET_DB = "casjprj"
+SOURCE_DB = "csjprd"
 
 # CS - xpath=//*[@id="test-l-1"]/div[2]/div[1]/div/span/input, HR - xpath=//*[@id="test-l-1"]/div[2]/div[2]/div/span/input
-CS_OR_HR_SELECT = '//*[@id="test-l-1"]/div[2]/div[2]/div/span/input'
+CS_OR_HR_SELECT = 'xpath=//*[@id="test-l-1"]/div[2]/div[1]/div/span/input'
 
 APP_DB = 'csjappdev.cms.calstate.edu'
 DEV_DB = 'csjdev700.sldc.calstate.edu'

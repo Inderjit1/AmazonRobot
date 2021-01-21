@@ -5,7 +5,7 @@ Resource    ../Resources/PostCloneApp.robot
 Resource    ../Resources/CommonWeb.robot
 
 Test Setup  Begin Web Test
-#Test Teardown   End Web Test
+Test Teardown   End Web Test
 
 Variables   ../CustomLibrary/properties.py
 
@@ -20,6 +20,7 @@ Delphix
     [Tags]    Delphix
     PostCloneApp.Log On To Site
     PostCloneApp.Clone Database
+    PostCloneApp.Verify Clone ran succesfully
 
 UniWeb File Move
     [Documentation]    Move files over through UniWeb

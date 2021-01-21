@@ -32,13 +32,34 @@ Move Files
 
 
     #Select Source Database
-    Wait Until Page Contains Element    xpath=//*[@id="sourcedb"]
-    Wait Until Page Contains Element    xpath=//*[@value="${TARGET_DB}"]
-    Click Element   xpath=//*[@value="${TARGET_DB}"]
+    Wait Until Element Is Visible   xpath=//*[@id="sourcedb"]
+    Wait Until Element Is Visible     xpath=//select[@id="sourcedb"]/option[@value="${SOURCE_DB}"]
+    Click Element    xpath=//select[@id="sourcedb"]/option[@value="${SOURCE_DB}"]
 
     # Select Target Database
-    Wait Until Page Contains Element    xpath=//*[@id="targetdb"]
-    Wait Until Page Contains Element    xpath=//*[@value="${SOURCE_DB}"]
-    Click Element   xpath=//*[@value="${SOURCE_DB}"]
+    Wait Until Element Is Visible     xpath=//*[@id="targetdb"]
+    Wait Until Element Is Visible   xpath=//select[@id="targetdb"]/option[@value="${TARGET_DB}"]
+    Click Element   xpath=//select[@id="targetdb"]/option[@value="${TARGET_DB}"]
+
+
 
     Click Element   xpath=//*[@id="nxt"]
+
+    Wait Until Page Contains Element   xpath=//*[@id="myModal"]/div/div/div[2]/p
+    Wait Until Element Is Visible   xpath=/html/body/div[1]/div/div/div[3]/button[1]
+    Click Button    xpath=/html/body/div[1]/div/div/div[3]/button[1]
+
+    Go To     https://uniweb20.calstate.edu/listjobs
+
+    Wait Until Keyword Succeeds     10min   30s     Verify Fileshare Completion
+
+Verify Fileshare Completion
+    Wait Until Element Is Visible   xpath=/html/body/app-root/app-layout/div/app-job-builder-routing/div/app-listjobs/div/div[3]/button
+    Click Element   xpath=/html/body/app-root/app-layout/div/app-job-builder-routing/div/app-listjobs/div/div[3]/button
+    Wait Until Element Is Visible   xpath=/html/body/app-root/app-layout/div/app-job-builder-routing/div/app-listjobs/div/div[4]/table/tbody/tr[1]/td[11]   10s
+    ${fileshare_check}=     Get Value   xpath=/html/body/app-root/app-layout/div/app-job-builder-routing/div/app-listjobs/div/div[4]/table/tbody/tr[1]/td[11]
+    Should Be Equal As Strings  ${fileshare_check}  The file transfer completed
+#    Page Should Not Contain
+
+#    Wait Until Element Is Visible   xpath=//*[@id="navbarResponsive1"]/ul/li[2]/a
+#    Click Element   xpath=//*[@id="navbarResponsive1"]/ul/li[2]/a
