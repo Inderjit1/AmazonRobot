@@ -10,6 +10,7 @@ Variables   ../CustomLibrary/properties.py
 
 *** Keywords ***
 Begin Web Test
+<<<<<<< HEAD
 #    ${chrome_options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
 #    Call Method    ${chrome_options}    add_argument    --disable-extensions
 ##    Call Method    ${chrome_options}    add_argument    --headless
@@ -23,6 +24,7 @@ Begin Web Test
     #Create Webdriver    Chrome      executable_path='C:/Chrome_Versions/Chrome80/chromedriver.exe'
     Open Browser    ${DELPHIXURL}      ${BROWSER}
     Maximize Browser Window
+
 
 End Web Test
      Close Browser
