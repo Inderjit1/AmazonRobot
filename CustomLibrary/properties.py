@@ -1,4 +1,4 @@
-USERNAME = 'XXX'
-PASSWORD = 'XXXXX'
+USERNAME = 'Its Inderjit'
+PASSWORD = 'Secret'
 
 
