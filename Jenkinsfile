@@ -10,8 +10,8 @@ pipeline {
     stages {
         stage("Test read from file"){
             steps{
-                echo ${USERNAME}
-                echo ${PASSWORD}
+                echo "${USERNAME}"
+                echo "${PASSWORD}"
             }
         }
         stage("build") {
