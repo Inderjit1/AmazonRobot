@@ -1,5 +1,5 @@
 node {
-   props = readProperties file:'properties.py'
+   props = readProperties file:'CustomLibrary/properties.py'
    USERNAME = props['USERNAME']
    PASSWORD = props['PASSWORD']
 }
@@ -14,10 +14,10 @@ pipeline {
                 echo "${PASSWORD}"
             }
         }
-        stage("build") {
-            steps {
-                sh 'python3 -m robot.run --outputdir Results Tests/Front_Office.robot'
-            }
-        }
+      #  stage("build") {
+        #    steps {
+        #        sh 'python3 -m robot.run --outputdir Results Tests/Front_Office.robot'
+        #    }
+        #}
     }   
 }
