@@ -24,7 +24,7 @@ Update Secret Server Password
     Click Element   xpath=//*[@id="nav-folder-container"]/ss-folder-tree/ul/li[2]
     Wait Until Element Is Visible   xpath=//*[@id="folder-235"]
     Click Element   xpath=//*[@id="folder-235"]
-    Wait Until Element Is Visible   xpath=//a[contains(text(),'CASJDVL')]
+    Wait Until Element Is Visible   xpath=//a[contains(text(), ${SECRET_SERVER_DB})]
     Click Element       xpath=//a[contains(text(),'CASJDVL')]
 
     Wait Until Element Is Visible   xpath=//*[@id="edit-secret-password-edit"]
