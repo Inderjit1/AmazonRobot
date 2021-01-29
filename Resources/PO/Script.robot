@@ -18,7 +18,7 @@ Change SYSADM Password
        Open Connection     ${DEV_DB}
        Login    ${USERNAME}     ${PASSWORD}
        Execute Command      ${CHANGE_PASSWORD_SCRIPT}
-       Execute Command      ${NEW_SYSADM_PWD}
+
 
 
 Run Post Clone Script

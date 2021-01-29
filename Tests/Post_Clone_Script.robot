@@ -16,7 +16,6 @@ Post-Clone Scripts
     [Tags]  Scripts
     PostCloneApp.Change SYSADM Password in Database
     PostCloneApp.Run Post Clone Script
-#    PostCloneApp.Start Post-Clone Scripts
-#    PostCloneApp.Start App Server
+    PostCloneApp.Start App Server
 
 

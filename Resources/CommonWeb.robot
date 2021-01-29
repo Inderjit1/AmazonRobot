@@ -10,7 +10,6 @@ Variables   ../CustomLibrary/properties.py
 
 *** Keywords ***
 Begin Web Test
-<<<<<<< HEAD
 #    ${chrome_options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
 #    Call Method    ${chrome_options}    add_argument    --disable-extensions
 ##    Call Method    ${chrome_options}    add_argument    --headless

@@ -14,28 +14,7 @@ pipeline {
         }
         stage("build") {
             steps {
-                script {
-                    gv.buildApp()
-                }
-            }
-        }
-        stage("test") {
-            when {
-                expression {
-                    params.executeTests
-                }
-            }
-            steps {
-                script {
-                    gv.testApp()
-                }
-            }
-        }
-        stage("deploy") {
-            steps {
-                script {
-                    gv.deployApp()
-                }
+                sh 'python3 -m robot.run --outputdir Results Tests/Post_Clone_Script.robot'
             }
         }
     }   

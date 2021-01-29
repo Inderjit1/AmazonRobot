@@ -28,5 +28,10 @@ UniWeb File Move
     PostCloneApp.Log On To Uniweb
     PostCloneApp.Move Files
 
+Change Ruleset ID for Web Server
+    [Documentation]    Ruleset ID needs to be changed before web server are restarted
+    [Tags]  Ruleset
+    PostCloneApp.Change Ruleset ID
+
 
 
