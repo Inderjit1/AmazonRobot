@@ -9,40 +9,40 @@ pipeline {
         stage("build") {
             steps {
                  sh "python3 -m robot.run  --variables 
-                                        USERNAME:${params.user_name}
-  										PASSWORD:${params.pwd} 
-                                        SOURCE_DB: ${params.source_db}
-                                        TARGET_DB:${params.target_db}
-                                        DELPHIXURL:${params.delphix_url}
-                                        UNIWEBURL:${params.uniweb_url}
-                                        CS_OR_HR_SELECT:${params.cs_or_hr}                                            
+                                        USERNAME:${env.USERNAME}
+  										PASSWORD:${env.PASSWORD} 
+                                        SOURCE_DB: ${env.SOURCE_DB}
+                                        TARGET_DB:${env.TARGET_DB}
+                                        DELPHIXURL:${env.DELPHIXURL}
+                                        UNIWEBURL:${env.UNIWEBURL}
+                                        CS_OR_HR_SELECT:${env.CS_OR_HR_CALSTATE_URL}                                            
   							--outputdir Results Tests/Post_Clone_Master.robot"
   
   
                  sh "python3 -m robot.run 	--variables 
-                                        USERNAME:${params.user_name}
-  									    PASSWORD:${params.pwd} 
-                                      	APP_DB:${params.app_db}
-                                        DEV_DB: ${params.dev_db}
-                                        CHANGE_PASSWORD_SCRIPT: ${params.change_pwd_script}
-                                        NEW_SYSADM_PWD: ${params.new_sysadm_pwd}
-                                        APPSERVER_START_SCRIPT: ${params.appserver_start}
-                                        APPSERVER_STOP_SCRIPT: ${params.appserver_stop}
+                                        USERNAME:${env.USERNAME}
+  									    PASSWORD:${env.PASSWORD} 
+                                      	APP_DB:${env.APP_DB}
+                                        DEV_DB: ${env.DEV_DB}
+                                        CHANGE_PASSWORD_SCRIPT: ${env.CHANGE_PASSWORD_SCRIPT}
+                                        NEW_SYSADM_PWD: ${env.NEW_SYSADM_PWD}
+                                        APPSERVER_START_SCRIPT: ${env.APPSERVER_START_SCRIPT}
+                                        APPSERVER_STOP_SCRIPT: ${env.APPSERVER_STOP_SCRIPT}
        						--outputdir Results Tests/Post_Clone_Script.robot"
                             
                 sh "python3 -m robot.run  --variables 
-                                        PEOPLESOFT_USERNAME:${params.peoplesoft_username}
-                                        PEOPLESOFT_PWD:${params.peoplesoft_pwd}
-                                        RULSET_ID:${params.ruleset_id} 
-                                        CS_OR_HR_SELECT:${params.cs_or_hr}
+                                        PEOPLESOFT_USERNAME:${env.PEOPLESOFT_USERNAME}
+                                        PEOPLESOFT_PWD:${env.PEOPLESOFT_PWD}
+                                        RULSET_ID:${env.RULSET_ID} 
+                                        CS_OR_HR_SELECT:${env.CS_OR_HR_SELECT}
                                 --outputdir Results Tests/Post_Clone_Appsian.robot"
                             
                 sh "python3 -m robot.run 	--variables 
-                                        ID:${params.id}
-  										 SECRET_SERVER_PWD: ${params.secret_server_pwd}
-                                        SECRET_SERVER_DB: ${params.secret_server_db}
-                                        NEW_SYSADM_PWD: ${params.new_sysadm_pwd}
-                                        TSSURL: ${params.tss_url}
+                                        ID:${env.ID}
+										TARGET_DB:${env.TARGET_DB}
+  										SECRET_SERVER_PWD: ${env.SECRET_SERVER_PWD}
+                                        NEW_SYSADM_PWD: ${env.NEW_SYSADM_PWD}
+                                        TSSURL: ${env.TSSURL}
   							--outputdir Results Tests/Post_Clone_Secret_Server.robot"
             }
         }
