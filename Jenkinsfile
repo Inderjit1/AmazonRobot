@@ -10,7 +10,7 @@ pipeline {
             steps {
                  sh "python3 -m robot.run  --variables 
                                         USERNAME:${params.user_name}
-  										                  PASSWORD:${params.pwd} 
+  										PASSWORD:${params.pwd} 
                                         SOURCE_DB: ${params.source_db}
                                         TARGET_DB:${params.target_db}
                                         DELPHIXURL:${params.delphix_url}
@@ -21,7 +21,7 @@ pipeline {
   
                  sh "python3 -m robot.run 	--variables 
                                         USERNAME:${params.user_name}
-  									  	                PASSWORD:${params.pwd} 
+  									    PASSWORD:${params.pwd} 
                                       	APP_DB:${params.app_db}
                                         DEV_DB: ${params.dev_db}
                                         CHANGE_PASSWORD_SCRIPT: ${params.change_pwd_script}
@@ -39,7 +39,7 @@ pipeline {
                             
                 sh "python3 -m robot.run 	--variables 
                                         ID:${params.id}
-  										                  SECRET_SERVER_PWD: ${params.secret_server_pwd}
+  										 SECRET_SERVER_PWD: ${params.secret_server_pwd}
                                         SECRET_SERVER_DB: ${params.secret_server_db}
                                         NEW_SYSADM_PWD: ${params.new_sysadm_pwd}
                                         TSSURL: ${params.tss_url}
