@@ -1,6 +1,5 @@
 from subprocess import Popen, PIPE
 import subprocess
-import pexpect
 import properties
 
 
@@ -19,19 +18,3 @@ def sqlplus_connect():
         raise Exception("Error in sql script execution")
     else:
         return True
-
-
-# def change_sysadm_password():
-#     child = pexpect.spawn(properties.SSH_TO_APP_DB)
-#     child.expect('password: ', timeout=20)
-#     child.sendline(properties.PASSWORD)
-#
-#     child.expect('$')
-#     child.sendline('')
-
-    # if "ERROR" in output:
-    #     raise Exception("Error in sql script execution")
-    # else:
-    #     return True
-
-# change_sysadm_password()
