@@ -51,15 +51,29 @@ Move Files
 
     Go To     https://uniweb20.calstate.edu/listjobs
 
-    Wait Until Keyword Succeeds     10min   30s     Verify Fileshare Completion
+
+    Wait Until Keyword Succeeds     2min    6s      Verify Job Started
+    Wait Until Keyword Succeeds     20min   16s     Verify Fileshare Completion
+
+Verify Job Started
+    Wait Until Element Is Visible   xpath=/html/body/app-root/app-layout/div/app-job-builder-routing/div/app-listjobs/div/div[3]/button
+    Click Element   xpath=/html/body/app-root/app-layout/div/app-job-builder-routing/div/app-listjobs/div/div[3]/button
+
+    Wait Until Element Is Visible   xpath=/html/body/app-root/app-layout/div/app-job-builder-routing/div/app-listjobs/div/div[4]/table/tbody/tr[1]/td[11]   10s
+    ${fileshare_initial_check}=     Get Text   xpath=/html/body/app-root/app-layout/div/app-job-builder-routing/div/app-listjobs/div/div[4]/table/tbody/tr[1]/td[11]
+    Log     ${fileshare_initial_check}
+    Log to Console      Initial check is: ${fileshare_initial_check}
+    Should Be Equal As Strings  ${fileshare_initial_check}   The file transfer to EDGE Server in-progress please wait
 
 Verify Fileshare Completion
     Wait Until Element Is Visible   xpath=/html/body/app-root/app-layout/div/app-job-builder-routing/div/app-listjobs/div/div[3]/button
     Click Element   xpath=/html/body/app-root/app-layout/div/app-job-builder-routing/div/app-listjobs/div/div[3]/button
     Wait Until Element Is Visible   xpath=/html/body/app-root/app-layout/div/app-job-builder-routing/div/app-listjobs/div/div[4]/table/tbody/tr[1]/td[11]   10s
-    ${fileshare_check}=     Get Value   xpath=/html/body/app-root/app-layout/div/app-job-builder-routing/div/app-listjobs/div/div[4]/table/tbody/tr[1]/td[11]
-    Should Be Equal As Strings  ${fileshare_check}  The file transfer completed
-#    Page Should Not Contain
+    ${fileshare_check}=     Get Text   xpath=/html/body/app-root/app-layout/div/app-job-builder-routing/div/app-listjobs/div/div[4]/table/tbody/tr[1]/td[11]
 
-#    Wait Until Element Is Visible   xpath=//*[@id="navbarResponsive1"]/ul/li[2]/a
-#    Click Element   xpath=//*[@id="navbarResponsive1"]/ul/li[2]/a
+    Log     ${fileshare_check}
+    Log to Console      Fileshare check is: ${fileshare_check}
+
+    Should Be Equal As Strings  ${fileshare_check}  The file transfer completed
+    Page Should Not Contain     The file transfer to EDGE Server in-progress please wait
+

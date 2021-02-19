@@ -13,6 +13,6 @@ ${BROWSER} =    chrome
 
 *** Test Cases ***
 Post-Clone Scripts
-    [Documentation]    Update Secret Server Password
+    [Documentation]    Update Thycotic Secret Server Password
     [Tags]  Secret
     PostCloneApp.Update password in Secret Server

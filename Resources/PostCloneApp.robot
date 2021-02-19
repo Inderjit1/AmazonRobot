@@ -36,6 +36,9 @@ Run Post Clone Script
 Start App Server
     Script.Start App Server
 
+Recycle Web Server
+    Script.Recycle Web Server
+
 Update password in Secret Server
     SecretServer.Log into Secret Server
     SecretServer.Update Secret Server Password

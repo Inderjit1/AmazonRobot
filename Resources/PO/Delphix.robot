@@ -57,7 +57,7 @@ Verify Clone run
     Click Element  xpath=/html/body/div[2]/div[2]/ad-base-admin-app/div/shr-navbar/nav/div/ul/li[3]/ul/li[2]/a
 
     Wait Until Page Contains       RUNNING
-    Wait Until Keyword Succeeds     15min     40s     Check Database Clone Status
+    Wait Until Keyword Succeeds     25min     40s     Check Database Clone Status
 
 Check Database Clone Status
 #    ${db_status}=   Get Value   xpath=/html/body/div[2]/div[2]/ad-base-admin-app/div/dx-split-view/div/div[1]/div/dx-split-view-first/div/div/alt-jobs/alt-rangebound-collection/dx-two-column-view/div/div[2]/ng-transclude/dx-two-column-center/div/ng-transclude/div[2]/dx-grid-new/ag-grid-angular/div/div[1]/div/div[3]/div[2]/div/div/div/div[6]/alt-job-job-state-renderer/span

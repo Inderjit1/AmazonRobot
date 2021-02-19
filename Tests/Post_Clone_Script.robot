@@ -18,4 +18,9 @@ Post-Clone Scripts
     PostCloneApp.Run Post Clone Script
     PostCloneApp.Start App Server
 
+Recycle Web Server
+    [Documentation]     Recyle the web servers
+    [Tags]  WebServer
+    PostCloneApp.Recycle Web Server
+
 

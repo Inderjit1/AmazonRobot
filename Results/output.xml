@@ -1,178 +1,191 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.2.2 (Python 3.7.3 on win32)" generated="20210119 14:26:59.455" rpa="false">
-<suite id="s1" name="Post Clone Secret Server" source="C:\Users\010203453\PycharmProjects\post-clone\Tests\Post_Clone_Secret_Server.robot">
-<test id="s1-t1" name="Post-Clone Scripts">
-<kw name="Begin Secret Server Web Test" library="CommonWeb" type="setup">
+<robot generator="Robot 3.2.2 (Python 3.7.3 on win32)" generated="20210219 10:02:42.705" rpa="false">
+<suite id="s1" name="Post Clone Appsian" source="C:\Users\010203453\PycharmProjects\post-clone\Tests\Post_Clone_Appsian.robot">
+<test id="s1-t1" name="Change Ruleset ID for Web Server">
+<kw name="Begin Appsian Web Test" library="CommonWeb" type="setup">
 <kw name="Open Browser" library="SeleniumLibrary">
 <doc>Opens a new browser instance to the optional ``url``.</doc>
 <arguments>
-<arg>${TSSURL}</arg>
+<arg>${CS_OR_HR_CALSTATE_URL}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20210119 14:27:00.751" level="INFO">Opening browser 'chrome' to base url 'https://secretserver.sjsu.edu/Login.aspx?ReturnUrl=%2f'.</msg>
-<status status="PASS" starttime="20210119 14:27:00.751" endtime="20210119 14:27:06.331"></status>
+<msg timestamp="20210219 10:02:43.861" level="INFO">Opening browser 'chrome' to base url 'https://hsjdev.hr.calstate.edu/psp/HASJDVL/?cmd=login&amp;languageCd=ENG&amp;'.</msg>
+<status status="PASS" starttime="20210219 10:02:43.860" endtime="20210219 10:02:50.743"></status>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20210119 14:27:06.332" endtime="20210119 14:27:08.492"></status>
+<status status="PASS" starttime="20210219 10:02:50.745" endtime="20210219 10:02:52.939"></status>
 </kw>
-<status status="PASS" starttime="20210119 14:27:00.749" endtime="20210119 14:27:08.493"></status>
+<status status="PASS" starttime="20210219 10:02:43.858" endtime="20210219 10:02:52.939"></status>
 </kw>
-<kw name="Update password in Secret Server" library="PostCloneApp">
-<kw name="Log into Secret Server" library="SecretServer">
-<doc>Log into secret server</doc>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<kw name="Change Ruleset ID" library="PostCloneApp">
+<kw name="Change Ruleset ID" library="AppsianFirewall">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
 <arguments>
-<arg>xpath=//*[@id="LoginUserControl1_UserNameTextBox"]</arg>
+<arg>${CS_OR_HR_CALSTATE_URL}</arg>
 </arguments>
-<status status="PASS" starttime="20210119 14:27:08.494" endtime="20210119 14:27:08.514"></status>
+<msg timestamp="20210219 10:02:52.948" level="INFO">Opening url 'https://hsjdev.hr.calstate.edu/psp/HASJDVL/?cmd=login&amp;languageCd=ENG&amp;'</msg>
+<status status="PASS" starttime="20210219 10:02:52.947" endtime="20210219 10:02:53.113"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
 <arguments>
-<arg>id=LoginUserControl1_UserNameTextBox</arg>
-<arg>${ID}</arg>
+<arg>id=userid</arg>
+<arg>${PEOPLESOFT_USERNAME}</arg>
 </arguments>
-<msg timestamp="20210119 14:27:08.515" level="INFO">Typing text '010203453' into text field 'id=LoginUserControl1_UserNameTextBox'.</msg>
-<status status="PASS" starttime="20210119 14:27:08.515" endtime="20210119 14:27:08.667"></status>
+<msg timestamp="20210219 10:02:53.115" level="INFO">Typing text 'SJIBASSI' into text field 'id=userid'.</msg>
+<status status="PASS" starttime="20210219 10:02:53.114" endtime="20210219 10:02:53.280"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
 <arguments>
-<arg>id=LoginUserControl1_PasswordTextBox</arg>
-<arg>${SECRET_SERVER_PWD}</arg>
+<arg>id=pwd</arg>
+<arg>${PEOPLESOFT_PWD}</arg>
 </arguments>
-<msg timestamp="20210119 14:27:08.668" level="INFO">Typing text 'Boxing2015!' into text field 'id=LoginUserControl1_PasswordTextBox'.</msg>
-<status status="PASS" starttime="20210119 14:27:08.667" endtime="20210119 14:27:08.812"></status>
+<msg timestamp="20210219 10:02:53.281" level="INFO">Typing text 'Hahaha123!' into text field 'id=pwd'.</msg>
+<status status="PASS" starttime="20210219 10:02:53.281" endtime="20210219 10:02:53.438"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="login"]/div/div[1]/div[8]/input</arg>
+</arguments>
+<msg timestamp="20210219 10:02:53.439" level="INFO">Clicking button 'xpath=//*[@id="login"]/div/div[1]/div[8]/input'.</msg>
+<status status="PASS" starttime="20210219 10:02:53.438" endtime="20210219 10:02:56.685"></status>
 </kw>
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
 <arguments>
-<arg>xpath=//*[@id="LoginUserControl1_DomainDropDownList"]/option[2]</arg>
+<arg>xpath=//*[@id="pthnavbca_PORTAL_ROOT_OBJECT"]</arg>
 </arguments>
-<status status="PASS" starttime="20210119 14:27:08.812" endtime="20210119 14:27:08.831"></status>
+<status status="PASS" starttime="20210219 10:02:56.685" endtime="20210219 10:02:56.712"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
-<arg>xpath=//*[@id="LoginUserControl1_DomainDropDownList"]/option[2]</arg>
+<arg>xpath=//*[@id="pthnavbca_PORTAL_ROOT_OBJECT"]</arg>
 </arguments>
-<msg timestamp="20210119 14:27:08.832" level="INFO">Clicking element 'xpath=//*[@id="LoginUserControl1_DomainDropDownList"]/option[2]'.</msg>
-<status status="PASS" starttime="20210119 14:27:08.831" endtime="20210119 14:27:08.889"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//*[@id="LoginUserControl1_LoginButton"]</arg>
-</arguments>
-<msg timestamp="20210119 14:27:08.890" level="INFO">Clicking element 'xpath=//*[@id="LoginUserControl1_LoginButton"]'.</msg>
-<status status="PASS" starttime="20210119 14:27:08.889" endtime="20210119 14:27:10.206"></status>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<arguments>
-<arg>xpath=//*[@id="LoginUserControl1_DuoPushButton"]</arg>
-</arguments>
-<status status="PASS" starttime="20210119 14:27:10.206" endtime="20210119 14:27:10.230"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//*[@id="LoginUserControl1_DuoPushButton"]</arg>
-</arguments>
-<msg timestamp="20210119 14:27:10.230" level="INFO">Clicking element 'xpath=//*[@id="LoginUserControl1_DuoPushButton"]'.</msg>
-<status status="PASS" starttime="20210119 14:27:10.230" endtime="20210119 14:27:17.476"></status>
-</kw>
-<status status="PASS" starttime="20210119 14:27:08.494" endtime="20210119 14:27:17.476"></status>
-</kw>
-<kw name="Update Secret Server Password" library="SecretServer">
-<doc>Update password in Secret Server</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>xpath=//*[@id="nav-folder-container"]/ss-folder-tree/ul/li[2]</arg>
-</arguments>
-<status status="PASS" starttime="20210119 14:27:17.477" endtime="20210119 14:27:20.497"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//*[@id="nav-folder-container"]/ss-folder-tree/ul/li[2]</arg>
-</arguments>
-<msg timestamp="20210119 14:27:20.499" level="INFO">Clicking element 'xpath=//*[@id="nav-folder-container"]/ss-folder-tree/ul/li[2]'.</msg>
-<status status="PASS" starttime="20210119 14:27:20.498" endtime="20210119 14:27:20.605"></status>
+<msg timestamp="20210219 10:02:56.716" level="INFO">Clicking element 'xpath=//*[@id="pthnavbca_PORTAL_ROOT_OBJECT"]'.</msg>
+<status status="PASS" starttime="20210219 10:02:56.714" endtime="20210219 10:02:56.888"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` is visible.</doc>
 <arguments>
-<arg>xpath=//*[@id="folder-235"]</arg>
+<arg>xpath=//*[@id="fldra_GS_APPSIAN"]</arg>
 </arguments>
-<status status="PASS" starttime="20210119 14:27:20.606" endtime="20210119 14:27:21.490"></status>
+<status status="PASS" starttime="20210219 10:02:56.888" endtime="20210219 10:02:57.073"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
-<arg>xpath=//*[@id="folder-235"]</arg>
+<arg>xpath=//*[@id="fldra_GS_APPSIAN"]</arg>
 </arguments>
-<msg timestamp="20210119 14:27:21.491" level="INFO">Clicking element 'xpath=//*[@id="folder-235"]'.</msg>
-<status status="PASS" starttime="20210119 14:27:21.490" endtime="20210119 14:27:21.590"></status>
+<msg timestamp="20210219 10:02:57.074" level="INFO">Clicking element 'xpath=//*[@id="fldra_GS_APPSIAN"]'.</msg>
+<status status="PASS" starttime="20210219 10:02:57.073" endtime="20210219 10:02:57.217"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` is visible.</doc>
 <arguments>
-<arg>xpath=//a[contains(text(),'CASJDVL')]</arg>
+<arg>xpath=//*[@id="fldra_GS_MOBILE"]</arg>
 </arguments>
-<status status="PASS" starttime="20210119 14:27:21.591" endtime="20210119 14:27:22.599"></status>
+<status status="PASS" starttime="20210219 10:02:57.217" endtime="20210219 10:02:57.602"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
-<arg>xpath=//a[contains(text(),'CASJDVL')]</arg>
+<arg>xpath=//*[@id="fldra_GS_MOBILE"]</arg>
 </arguments>
-<msg timestamp="20210119 14:27:22.599" level="INFO">Clicking element 'xpath=//a[contains(text(),'CASJDVL')]'.</msg>
-<status status="PASS" starttime="20210119 14:27:22.599" endtime="20210119 14:27:22.914"></status>
+<msg timestamp="20210219 10:02:57.603" level="INFO">Clicking element 'xpath=//*[@id="fldra_GS_MOBILE"]'.</msg>
+<status status="PASS" starttime="20210219 10:02:57.602" endtime="20210219 10:02:57.697"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` is visible.</doc>
 <arguments>
-<arg>xpath=//*[@id="edit-secret-password-edit"]</arg>
+<arg>xpath=//*[@id="fldra_GS_ERP_FIREWALL"]</arg>
 </arguments>
-<status status="PASS" starttime="20210119 14:27:22.914" endtime="20210119 14:27:23.678"></status>
+<status status="PASS" starttime="20210219 10:02:57.697" endtime="20210219 10:02:57.955"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
-<arg>xpath=//*[@id="edit-secret-password-edit"]</arg>
+<arg>xpath=//*[@id="fldra_GS_ERP_FIREWALL"]</arg>
 </arguments>
-<msg timestamp="20210119 14:27:23.679" level="INFO">Clicking element 'xpath=//*[@id="edit-secret-password-edit"]'.</msg>
-<status status="PASS" starttime="20210119 14:27:23.679" endtime="20210119 14:27:23.760"></status>
+<msg timestamp="20210219 10:02:57.955" level="INFO">Clicking element 'xpath=//*[@id="fldra_GS_ERP_FIREWALL"]'.</msg>
+<status status="PASS" starttime="20210219 10:02:57.955" endtime="20210219 10:02:58.037"></status>
 </kw>
-<status status="PASS" starttime="20210119 14:27:17.477" endtime="20210119 14:27:23.760"></status>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath=//*[@id="crefli_GS_FW_SETUP_GBL"]/a</arg>
+</arguments>
+<status status="PASS" starttime="20210219 10:02:58.037" endtime="20210219 10:02:58.298"></status>
 </kw>
-<status status="PASS" starttime="20210119 14:27:08.493" endtime="20210119 14:27:23.760"></status>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="crefli_GS_FW_SETUP_GBL"]/a</arg>
+</arguments>
+<msg timestamp="20210219 10:02:58.299" level="INFO">Clicking element 'xpath=//*[@id="crefli_GS_FW_SETUP_GBL"]/a'.</msg>
+<status status="PASS" starttime="20210219 10:02:58.299" endtime="20210219 10:02:59.494"></status>
 </kw>
-<doc>Update Secret Server Password</doc>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>xpath=//*[@id="GS_FW_SYSTEM_GS_ACTV_RULESET"]</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210219 10:03:28.122" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=88.0.4324.150)
+</msg>
+<status status="FAIL" starttime="20210219 10:03:15.976" endtime="20210219 10:03:28.123"></status>
+</kw>
+<msg timestamp="20210219 10:03:28.124" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=88.0.4324.150)
+</msg>
+<msg timestamp="20210219 10:03:28.132" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=88.0.4324.150)
+</msg>
+<status status="FAIL" starttime="20210219 10:02:59.494" endtime="20210219 10:03:28.132"></status>
+</kw>
+<status status="FAIL" starttime="20210219 10:02:52.946" endtime="20210219 10:03:28.133"></status>
+</kw>
+<status status="FAIL" starttime="20210219 10:02:52.942" endtime="20210219 10:03:28.133"></status>
+</kw>
+<kw name="End Appsian Web Test" library="CommonWeb" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210219 10:03:28.136" endtime="20210219 10:03:30.399"></status>
+</kw>
+<status status="PASS" starttime="20210219 10:03:28.135" endtime="20210219 10:03:30.400"></status>
+</kw>
+<doc>Ruleset ID needs to be changed before web server are restarted</doc>
 <tags>
-<tag>Secret</tag>
+<tag>Ruleset</tag>
 </tags>
-<status status="PASS" starttime="20210119 14:27:00.747" endtime="20210119 14:27:23.762" critical="yes"></status>
+<status status="FAIL" starttime="20210219 10:02:43.856" endtime="20210219 10:03:30.400" critical="yes">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=88.0.4324.150)
+</status>
 </test>
-<doc>Initiate post-clone scripts</doc>
-<status status="PASS" starttime="20210119 14:26:59.461" endtime="20210119 14:27:23.765"></status>
+<doc>Initiate post-clone activites</doc>
+<status status="FAIL" starttime="20210219 10:02:42.709" endtime="20210219 10:03:30.404"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0">Critical Tests</stat>
-<stat pass="1" fail="0">All Tests</stat>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0">Secret</stat>
+<stat pass="0" fail="1">Ruleset</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" id="s1" name="Post Clone Secret Server">Post Clone Secret Server</stat>
+<stat pass="0" fail="1" id="s1" name="Post Clone Appsian">Post Clone Appsian</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20210219 10:03:28.124" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=88.0.4324.150)
+</msg>
 </errors>
 </robot>
