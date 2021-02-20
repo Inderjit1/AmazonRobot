@@ -10,8 +10,8 @@ Log into Secret Server
     [Documentation]     Log into secret server
     Wait Until Page Contains Element    xpath=//*[@id="LoginUserControl1_UserNameTextBox"]
     Input Text      id=LoginUserControl1_UserNameTextBox    ${ID}
-#    Input Text      id=LoginUserControl1_PasswordTextBox    ${SECRET_SERVER_PWD}
-    Input Text      id=LoginUserControl1_PasswordTextBox    ${TARGET_DB}
+    Input Text      id=LoginUserControl1_PasswordTextBox    ${SECRET_SERVER_PWD}
+#    Input Text      id=LoginUserControl1_PasswordTextBox    ${TARGET_DB}
     #Click Element   xpath=//*[@id="LoginUserControl1_DomainDropDownList"]
     Wait Until Page Contains Element    xpath=//*[@id="LoginUserControl1_DomainDropDownList"]/option[2]
     Click Element    xpath=//*[@id="LoginUserControl1_DomainDropDownList"]/option[2]
