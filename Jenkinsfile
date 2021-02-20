@@ -34,7 +34,8 @@ pipeline {
                 --variable  CS_OR_HR_SELECT:${CS_OR_HR_CALSTATE_URL} \
                 Tests/Post_Clone_Appsian.robot
                 
-                robot --variable ID:${ID} --variable SECRET_SERVER_PWD:${SECRET_SERVER_PWD} \
+                robot --variable ID:${ID} \
+                --variable SECRET_SERVER_PWD:${SECRET_SERVER_PWD} \
                 --variable NEW_SYSADM_PWD: ${NEW_SYSADM_PWD} \
                 --variable TSSURL: ${TSSURL} \
                 Tests/Post_Clone_Secret_Server.robot
