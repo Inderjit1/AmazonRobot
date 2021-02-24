@@ -1,5 +1,5 @@
 node {
-    load "$JENKINS_HOME\properties.txt"
+    load "$JENKINS_HOME/properties.txt"
 }
 
 pipeline {
