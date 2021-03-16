@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-               sh "robot --variable USERNAME:${USERNAME} ^"
+               bat "robot --variable USERNAME:${USERNAME} ^"
                 "--variable PASSWORD:${PASSWORD} ^"
                 "--variable SOURCE_DB:${SOURCE_DB} ^"
                 "--variable TARGET_DB:${TARGET_DB} ^"
@@ -16,7 +16,7 @@ pipeline {
                 "--variable CS_OR_HR_SELECT:${CS_OR_HR_CALSTATE_URL} ^"
                 "Tests/Post_Clone_Master.robot"
 
-                sh "robot --variable USERNAME:${USERNAME} ^"
+                bat "robot --variable USERNAME:${USERNAME} ^"
                 "--variable  PASSWORD:${PASSWORD} ^"
                 "--variable  APP_DB:${APP_DB} ^"
                 "--variable  DEV_DB:${DEV_DB} ^"
@@ -27,13 +27,13 @@ pipeline {
                 "--variable WEBSERVER_RECYCLE_SCRIPT:${WEBSERVER_RECYCLE_SCRIPT} ^"
                 "Tests/Post_Clone_Script.robot"
 
-                sh "robot --variable PEOPLESOFT_USERNAME:${PEOPLESOFT_USERNAME} ^"
+                bat "robot --variable PEOPLESOFT_USERNAME:${PEOPLESOFT_USERNAME} ^"
                 "--variable  PEOPLESOFT_PWD:${PEOPLESOFT_PWD} ^"
                 "--variable  RULSET_ID:${RULSET_ID} ^"
                 "--variable  CS_OR_HR_SELECT:${CS_OR_HR_CALSTATE_URL} ^"
                 "Tests/Post_Clone_Appsian.robot"
 
-                sh "robot --variable ID:${ID} ^"
+                bat "robot --variable ID:${ID} ^"
                 "--variable SECRET_SERVER_PWD:${SECRET_SERVER_PWD} ^"
                 "--variable NEW_SYSADM_PWD: ${NEW_SYSADM_PWD} ^"
                 "--variable TSSURL: ${TSSURL} ^"
