@@ -16,8 +16,8 @@ pipeline {
         }
        stage("Test run on Windows"){
             steps{
-                bat '''robot -d results --variable URL:http://www.google.com
-                     --variable BROWSER:chrome Tests/Front_Office.robot'''
+                bat """robot -d results --variable URL:http://www.google.com ^
+                     --variable BROWSER:chrome Tests/Front_Office.robot"""
             }
         }
       /*  stage("build") {
